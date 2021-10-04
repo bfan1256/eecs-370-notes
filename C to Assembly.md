@@ -44,6 +44,8 @@ Once the inner function returns, then load everything back.
 
 **Caller saves must store and load if the variables they hold are live across a function call**
 
+**It is better to save non-live variables via caller save registers**
+
 Thus for an example likes below:
 
 ```c
@@ -81,6 +83,8 @@ void foo() {
 ```
 
 **Callee save must store and load if they use registers of any sort**
+
+**It is much better to save live variables in callee save**
 
 *`main()` is an exception as there is no need to store and load for callee-save as there is no higher function*
 
